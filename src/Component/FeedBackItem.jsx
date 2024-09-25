@@ -10,7 +10,7 @@ function FeedBackItem({item}){
                 
             <div className="num-display">{item.rating}</div>
             <div className="text-display">{item.text}</div>
-            
+            <p>cgbcbgcg</p>
             </div>
         </>
  )
