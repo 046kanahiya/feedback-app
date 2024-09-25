@@ -1,5 +1,6 @@
 import React from 'react'
 // import FeedbackData from '../Data/FeedBackData'
+import propTypes from 'prop-types'
 import FeedBackItem from './FeedBackItem'
 function FeedBackList({feedback}) {
     if(!feedback || feedback.length===0) return <p>No Feedback yet</p>
@@ -15,4 +16,7 @@ function FeedBackList({feedback}) {
   )
 }
 
+FeedBackList.propTypes={
+  feedback:propTypes.any
+}
 export default FeedBackList

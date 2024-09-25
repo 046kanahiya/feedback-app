@@ -8,7 +8,8 @@ function App() {
         <>
         <Header text ={"FeedBack UI"} bgColor="black" textColor="red"/>
         <div className="container">
-            <FeedBackList feedback ={Feedback}/>   
+            <FeedBackList feedback ={Feedback}/> 
+            
         </div>
         </>
     )
