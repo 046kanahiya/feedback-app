@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {v4 as uuidv4} from 'uuid' //to generate new id 
 import Header from "./Component/Header";
 import FeedBackData from "./Data/FeedBackData";
 import FeedBackList from "./Component/FeedBackList";
@@ -14,11 +15,18 @@ function App() {
             return item.id !==id; // ie jo id match nhi hai usse chod kr sab dede
        }))
     }
+
+    const addFeedback=(newFeedBack)=>{
+        newFeedBack.id =uuidv4()
+        //console.log(newFeedBack)
+        //now to add new feedback..its state th4 we cant directly push it th4 we make copy using spread operator
+        setFeedback([newFeedBack, ...feedback])
+    }
     return (
         <>
         <Header text ={"FeedBack UI"} bgColor="black" textColor="red"/>
         <div className="container">
-            <FeedBackForm/>
+            <FeedBackForm handleAdd={addFeedback}/>
             <FeedBackStatus feedback= {feedback}/>
             <FeedBackList feedback ={feedback} handleDelete={deleteFeedback}/> 
             

@@ -4,7 +4,7 @@ import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 function Button({children,version="primary",type="button",isDisabled=false}){
     return(
-        <button type={type} className={`btn btn-${version}`} >{children}</button>
+        <button type={type} className={`btn btn-${version}`}> {children}</button>
 
     )
 }
