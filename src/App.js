@@ -2,13 +2,14 @@ import React, { useState } from "react"
 import Header from "./Component/Header";
 import FeedBackData from "./Data/FeedBackData";
 import FeedBackList from "./Component/FeedBackList";
+import FeedBackStatus from "./Component/FeedBackStatus";
 function App() {
-    const [Feedback,setFeedback] = useState(FeedBackData)
+    const [feedback,setFeedback] = useState(FeedBackData)
     const deleteFeedback = (id)=>{
         
         //console.log('app',id)
         if(window.confirm('Are you sure you want to delete?'))
-       setFeedback(Feedback.filter((item)=>{
+       setFeedback(feedback.filter((item)=>{
             return item.id !==id; // ie jo id match nhi hai usse chod kr sab dede
        }))
     }
@@ -16,7 +17,8 @@ function App() {
         <>
         <Header text ={"FeedBack UI"} bgColor="black" textColor="red"/>
         <div className="container">
-            <FeedBackList feedback ={Feedback} handleDelete={deleteFeedback}/> 
+            <FeedBackStatus feedback= {feedback}/>
+            <FeedBackList feedback ={feedback} handleDelete={deleteFeedback}/> 
             
         </div>
         </>
