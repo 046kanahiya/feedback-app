@@ -3,6 +3,7 @@ import Header from "./Component/Header";
 import FeedBackData from "./Data/FeedBackData";
 import FeedBackList from "./Component/FeedBackList";
 import FeedBackStatus from "./Component/FeedBackStatus";
+import FeedBackForm from "./Component/FeedBackForm";
 function App() {
     const [feedback,setFeedback] = useState(FeedBackData)
     const deleteFeedback = (id)=>{
@@ -17,6 +18,7 @@ function App() {
         <>
         <Header text ={"FeedBack UI"} bgColor="black" textColor="red"/>
         <div className="container">
+            <FeedBackForm/>
             <FeedBackStatus feedback= {feedback}/>
             <FeedBackList feedback ={feedback} handleDelete={deleteFeedback}/> 
             
